@@ -1,5 +1,5 @@
 {
-  "name": "Automation",
+  "name": "Project Agaru",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,6 +10,11 @@
   "author": "Jeffery Brown",
   "license": "None",
   "devDependencies": {
-    "cypress": "^10.1.0"
+    "@4tw/cypress-drag-drop": "^2.2.0",
+    "cypress": "^10.1.0",
+    "cypress-file-upload": "^5.0.8"
+  },
+  "dependencies": {
+    "cypress-real-events": "^1.7.1"
   }
 }

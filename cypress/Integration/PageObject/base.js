@@ -2,15 +2,15 @@ class Base {
     goHome() {
         cy.visit('http://localhost:7080')
     }
+    modalWindowCloseButton() { return cy.get('.modal-footer > p')}
+
     visitABTesting() {
         cy.visit('http://localhost:7080/abtest')
     }
     visitAddRemoveTesting() {
         cy.visit('http://localhost:7080/add_remove_elements/')
     }
-    visitBasicAuthTesting(){
-        return cy.contains('Basic Auth').click()
-    }
+
     visitBrokenImagesTesting(){
         cy.visit('http://localhost:7080/broken_images')
     }
@@ -24,9 +24,9 @@ class Base {
         cy.visit('http://localhost:7080/context_menu')
     }
     visitDigestAuthTesting(){
-        cy.visit('http://localhost:7080/digest_auth')
+        cy.visit('https://admin:admin@the-internet.herokuapp.com/digest_auth')
     }
-    visitDissappearingElmntsTesting(){
+    visitDisappearingElmntsTesting(){
         cy.visit('http://localhost:7080/disappearing_elements')
     }
     visitDragNDropTesting(){
@@ -37,6 +37,10 @@ class Base {
     }
     visitDynamicContent(){
         cy.visit('http://localhost:7080/dynamic_content')
+    }
+
+    visitDynamicContentStatically(){
+        cy.visit('http://localhost:7080/dynamic_content?with_content=static')
     }
     visitDynamicControlsTesting(){
         cy.visit('http://localhost:7080/dynamic_controls')
@@ -68,8 +72,15 @@ class Base {
     visitFramesTesting(){
         cy.visit('http://localhost:7080/frames')
     }
+
+    visitNestedFramesTesting(){
+        cy.visit('http://localhost:7080/nested_frames')
+    }
     visitGeolocationTesting(){
         cy.visit('http://localhost:7080/geolocation')
+    }
+    visitGeolocationTestingElectron(fakelocation){
+        cy.visit('http://localhost:7080/geolocation', fakelocation)
     }
     visitHorizontalSliderTesting(){
         cy.visit('http://localhost:7080/horizontal_slider')
